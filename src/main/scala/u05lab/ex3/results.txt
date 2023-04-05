@@ -1,0 +1,122 @@
+---SEQ---
+
+Seq - size 1000000
+query first -- 318800 nanos; 0ms
+query last -- 11100 nanos; 0ms
+query middle -- 9901 nanos; 0ms
+append -- 26920899 nanos; 26ms
+delete last -- 14199 nanos; 0ms
+delete first -- 10300 nanos; 0ms
+delete middle -- 14066000 nanos; 14ms
+map -- 22086199 nanos; 22ms
+filter -- 21119500 nanos; 21ms
+
+---LINEARSEQ---
+
+List - size 1000000
+list - query first -- 9500 nanos; 0ms
+listbuffer - query first -- 1555300 nanos; 1ms
+list  - query last -- 5610401 nanos; 5ms
+listbuffer - query last -- 9401 nanos; 0ms
+list - query middle -- 8214899 nanos; 8ms
+listbuffer - query middle -- 3597200 nanos; 3ms
+list - append -- 12153399 nanos; 12ms
+listbuffer - append -- 12000 nanos; 0ms
+list - delete last -- 23613900 nanos; 23ms
+listbuffer - delete last -- 5458300 nanos; 5ms
+
+->Queue - size 1000000
+queue - query first -- 16699 nanos; 0ms
+mutQueue - query first -- 24800 nanos; 0ms
+queue - query last -- 6716701 nanos; 6ms
+mutQueue - query last -- 17599 nanos; 0ms
+queue - query middle -- 6853400 nanos; 6ms
+mutQueue - query middle -- 18400 nanos; 0ms
+queue - add new -- 9500 nanos; 0ms
+mutQueue - add new -- 16900 nanos; 0ms
+queue - remove last -- 16900 nanos; 0ms
+mutQueue - remove last -- 13800 nanos; 0ms
+
+---INDEXEDSEQ---
+
+->Set - size 1000000
+imm - query first -- 1485300 nanos; 1ms
+mut - query first -- 89800 nanos; 0ms
+imm - query last -- 21978900 nanos; 21ms
+mut - query last -- 76348701 nanos; 76ms
+imm - query middle -- 40500 nanos; 0ms
+mut - query middle -- 13799 nanos; 0ms
+imm - add new -- 39601 nanos; 0ms
+mut - add new -- 25601 nanos; 0ms
+imm - remove last -- 20856700 nanos; 20ms
+mut - remove last -- 65157700 nanos; 65ms
+imm - add all -- 924740201 nanos; 924ms
+mut - add all -- 176893600 nanos; 176ms
+
+---MAP---
+
+->Map - size 1000000
+imm - query first -- 1592300 nanos; 1ms
+mut - query first -- 565501 nanos; 0ms
+imm - query last -- 24700 nanos; 0ms
+mut - query last -- 12499 nanos; 0ms
+imm - query middle -- 11500 nanos; 0ms
+mut - query middle -- 7600 nanos; 0ms
+imm - add new -- 33601 nanos; 0ms
+mut - add new -- 14399 nanos; 0ms
+imm - remove last -- 30800 nanos; 0ms
+mut - remove last -- 48100 nanos; 0ms
+imm - add all -- 1232930400 nanos; 1232ms
+mut - add all -- 455285400 nanos; 455ms
+
+---SOME IMMUTABLES---
+
+->Vector - size 1000000
+query first -- 7600 nanos; 0ms
+query last -- 7000 nanos; 0ms
+query middle -- 13300 nanos; 0ms
+append -- 31200 nanos; 0ms
+delete last -- 14901 nanos; 0ms
+delete first -- 9099 nanos; 0ms
+delete middle -- 5595200 nanos; 5ms
+map -- 30593501 nanos; 30ms
+filter -- 17801800 nanos; 17ms
+
+->Range - size 1000000
+query first -- 8200 nanos; 0ms
+query last -- 5300 nanos; 0ms
+query middle -- 6401 nanos; 0ms
+append -- 12717800 nanos; 12ms
+delete last -- 7900 nanos; 0ms
+delete first -- 7700 nanos; 0ms
+delete middle -- 13792599 nanos; 13ms
+map -- 20170599 nanos; 20ms
+filter -- 12865600 nanos; 12ms
+
+->String - size 1000000
+query first -- 51901 nanos; 0ms
+query last -- 4401 nanos; 0ms
+query middle -- 6700 nanos; 0ms
+append -- 219000 nanos; 0ms
+delete last -- 99100 nanos; 0ms
+delete first -- 91300 nanos; 0ms
+delete middle -- 350200 nanos; 0ms
+map -- 14645601 nanos; 14ms
+filter -- 8317501 nanos; 8ms
+
+---SOME MUTABLES---
+
+Mutable Stack - size 1000000
+stack - query first -- 17200 nanos; 0ms
+stack - query last -- 8501 nanos; 0ms
+stack - query middle -- 10500 nanos; 0ms
+stack - add new -- 7300 nanos; 0ms
+stack - remove last -- 10000 nanos; 0ms
+
+Mutable Deque - size 1000000
+deque - query first -- 14000 nanos; 0ms
+deque - query last -- 11200 nanos; 0ms
+deque - query middle -- 10500 nanos; 0ms
+deque - add new -- 14600 nanos; 0ms
+deque - remove last -- 7001 nanos; 0ms
+
