@@ -31,10 +31,10 @@ class ConferenceReviewingImpl extends ConferenceReviewing:
   import Question.*
   import ConferenceReviewing.{review, defVal}
   private var reviews: Map[Int, List[Map[Question, Int]]] = Map.empty
-  override def loadReview(article: Int, relevance: Int, significance: Int, confidence: Int, finalScore: Int): Unit =
-    loadReview(article,review(relevance, significance, confidence, finalScore))
   override def loadReview(article: Int, map: Map[Question, Int]): Unit =
     this.reviews += article -> (this.reviews.getOrElse(article, defVal) :+ map)
+  override def loadReview(article: Int, relevance: Int, significance: Int, confidence: Int, finalScore: Int): Unit =
+    loadReview(article,review(relevance, significance, confidence, finalScore))
   override def orderedScores(article: Int, question: Question): List[Int] =
     this.reviews.getOrElse(article, defVal).flatMap(_.get(question)).sorted
   override def averageFinalScore(article: Int): Double =
